@@ -51,17 +51,14 @@ document.addEventListener("DOMContentLoaded", () => {
     lb.innerHTML = `
       <button class="lightbox-close" aria-label="Close">&times;</button>
       <img src="" alt="" />
-      <div class="lightbox-caption"></div>
     `;
     document.body.appendChild(lb);
     const lbImg = lb.querySelector("img");
-    const lbCaption = lb.querySelector(".lightbox-caption");
     const lbClose = lb.querySelector(".lightbox-close");
 
-    function openLightbox(imgEl, captionText) {
+    function openLightbox(imgEl) {
       lbImg.src = imgEl.src;
       lbImg.alt = imgEl.alt;
-      lbCaption.textContent = captionText;
       lb.classList.add("open");
     }
     function closeLightbox() {
@@ -70,11 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     swatches.forEach((swatch) => {
       const img = swatch.querySelector("img");
-      const caption = swatch.querySelector("figcaption");
       if (!img) return;
-      swatch.addEventListener("click", () =>
-        openLightbox(img, caption ? caption.textContent : "")
-      );
+      swatch.addEventListener("click", () => openLightbox(img));
     });
 
     lbClose.addEventListener("click", closeLightbox);
