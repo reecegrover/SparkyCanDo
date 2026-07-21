@@ -23,4 +23,66 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // Gallery: fade/slide reveal as cards scroll into view
+  const revealEls = document.querySelectorAll(".reveal");
+  if (revealEls.length && "IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    );
+    revealEls.forEach((el) => io.observe(el));
+  } else {
+    revealEls.forEach((el) => el.classList.add("in-view"));
+  }
+
+  // Gallery: click-to-enlarge lightbox
+  const swatches = document.querySelectorAll(".swatch");
+  if (swatches.length) {
+    const lb = document.createElement("div");
+    lb.className = "lightbox";
+    lb.innerHTML = `
+      <button class="lightbox-close" aria-label="Close">&times;</button>
+      <img src="" alt="" />
+      <div class="lightbox-caption"></div>
+    `;
+    document.body.appendChild(lb);
+    const lbImg = lb.querySelector("img");
+    const lbCaption = lb.querySelector(".lightbox-caption");
+    const lbClose = lb.querySelector(".lightbox-close");
+
+    function openLightbox(imgEl, captionText) {
+      lbImg.src = imgEl.src;
+      lbImg.alt = imgEl.alt;
+      lbCaption.textContent = captionText;
+      lb.classList.add("open");
+    }
+    function closeLightbox() {
+      lb.classList.remove("open");
+    }
+
+    swatches.forEach((swatch) => {
+      const img = swatch.querySelector("img");
+      const caption = swatch.querySelector("figcaption");
+      if (!img) return;
+      swatch.addEventListener("click", () =>
+        openLightbox(img, caption ? caption.textContent : "")
+      );
+    });
+
+    lbClose.addEventListener("click", closeLightbox);
+    lb.addEventListener("click", (e) => {
+      if (e.target === lb) closeLightbox();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightbox();
+    });
+  }
 });
