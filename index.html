@@ -75,37 +75,91 @@
     <section id="gallery">
       <div class="wrap">
         <div class="section-head">
-          <span class="eyebrow">Recent work</span>
-          <h2>A few favorites from the shop</h2>
-          <p>Every suit is custom fitted and built from scratch for its owner. Here's a small sample — see the full
-            gallery for more.</p>
+          <span class="eyebrow">My fursuit portfolio</span>
+          <h2>Enjoy flipping through the whole career!</h2>
+          <p>Suits made over the past decade plus — it's always fun seeing how things have progressed from the start to
+            now. ^^</p>
         </div>
-        <div class="gallery-grid">
-          <figure class="swatch">
-            <img src="https://static.wixstatic.com/media/1548d3_ff071554f8794a8889d5633c7fef4dd4~mv2.jpg"
-              alt="Kayto fursuit commission" />
-            <figcaption>Kayto</figcaption>
-          </figure>
-          <figure class="swatch">
-            <img src="https://static.wixstatic.com/media/1548d3_02f58a36f8dd4da7a3fffa43f9e0da9f~mv2.jpg"
-              alt="Fursuit commission, studio shot" />
-            <figcaption>Studio shoot</figcaption>
-          </figure>
-          <figure class="swatch">
-            <img src="https://static.wixstatic.com/media/1548d3_36f2f4e85f8a446eb7407a35bba00fd2~mv2.jpg"
-              alt="Fursuit commission close-up" />
-            <figcaption>Detail work</figcaption>
-          </figure>
-          <figure class="swatch">
-            <img src="https://static.wixstatic.com/media/1548d3_4febc796c44340049f354c0b77659dbc~mv2.jpg"
-              alt="Fursuit commission, outdoor shoot" />
-            <figcaption>Field shoot — Spurk</figcaption>
-          </figure>
+
+        <nav class="year-nav">
+          <a href="#y2023">2023</a>
+          <a href="#y2022">2022</a>
+          <a href="#y2021">2021</a>
+          <a href="#y2020">2020</a>
+        </nav>
+
+        <div class="gallery-year" id="y2023">
+          <div class="year-head">
+            <span class="year-badge">2023</span>
+            <p>*In the making*</p>
+          </div>
+          <div class="gallery-grid">
+            <figure class="swatch">
+              <img src="assets/gallery/2023/wip-01.jpg" alt="2023 fursuit build in progress" />
+              <figcaption>In the making</figcaption>
+            </figure>
+          </div>
         </div>
-        <p style="margin-top:36px;"><span class="edit-me">Edit me</span><br>Your original Gallery page
-          (<code>/projects-8</code>) almost certainly has more photos than these four. Copy the rest of the image files
-          from your Wix Media Manager into this project's <code>/assets/gallery/</code> folder and add more
-          <code>&lt;figure class="swatch"&gt;</code> blocks above, following the same pattern.</p>
+
+        <div class="gallery-year" id="y2022">
+          <div class="year-head">
+            <span class="year-badge">2022</span>
+            <p>Newest creations so far!</p>
+          </div>
+          <div class="gallery-grid">
+            <figure class="swatch">
+              <img src="https://static.wixstatic.com/media/1548d3_ff071554f8794a8889d5633c7fef4dd4~mv2.jpg"
+                alt="2022 fursuit commission" />
+              <figcaption>Kayto</figcaption>
+            </figure>
+            <figure class="swatch">
+              <img src="https://static.wixstatic.com/media/1548d3_02f58a36f8dd4da7a3fffa43f9e0da9f~mv2.jpg"
+                alt="2022 fursuit commission, studio shot" />
+              <figcaption>Studio shoot</figcaption>
+            </figure>
+            <figure class="swatch">
+              <img src="https://static.wixstatic.com/media/1548d3_36f2f4e85f8a446eb7407a35bba00fd2~mv2.jpg"
+                alt="2022 fursuit commission close-up" />
+              <figcaption>Detail work</figcaption>
+            </figure>
+            <figure class="swatch">
+              <img src="https://static.wixstatic.com/media/1548d3_4febc796c44340049f354c0b77659dbc~mv2.jpg"
+                alt="2022 fursuit commission, outdoor shoot" />
+              <figcaption>Field shoot — Spurk</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="gallery-year" id="y2021">
+          <div class="year-head">
+            <span class="year-badge">2021</span>
+          </div>
+          <div class="gallery-grid">
+            <figure class="swatch">
+              <img src="assets/gallery/2021/suit-01.jpg" alt="2021 fursuit commission" />
+              <figcaption>2021 commission</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="gallery-year" id="y2020">
+          <div class="year-head">
+            <span class="year-badge">2020</span>
+          </div>
+          <div class="gallery-grid">
+            <figure class="swatch">
+              <img src="assets/gallery/2020/suit-01.jpg" alt="2020 fursuit commission" />
+              <figcaption>2020 commission</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <p><span class="edit-me">Edit me</span> Only the 2022 photos are wired up with your real images so far. For each
+          other year: create a folder <code>assets/gallery/2023/</code> (etc.), drop the resized photos in, then
+          duplicate a <code>&lt;figure class="swatch"&gt;</code> block and point its <code>src</code> at the file — e.g.
+          <code>assets/gallery/2023/wip-01.jpg</code>. Add as many figures per year as you have photos; the grid wraps
+          automatically. Add a new year by copying a whole <code>&lt;div class="gallery-year"&gt;</code> block and
+          adding a matching link in the year-jump row above.</p>
       </div>
     </section>
 

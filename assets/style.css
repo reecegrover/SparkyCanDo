@@ -348,6 +348,55 @@ section {
   background: var(--surface);
 }
 
+/* --- gallery: year jump nav + year sections --- */
+.year-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.year-nav a {
+  text-decoration: none;
+  color: var(--muted);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.year-nav a:hover,
+.year-nav a:focus-visible {
+  color: var(--spark);
+  border-color: var(--spark);
+}
+
+.gallery-year {
+  margin-bottom: 60px;
+  scroll-margin-top: 90px;
+}
+
+.year-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.year-head .year-badge {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--spark);
+}
+
+.year-head p {
+  margin: 0;
+}
+
 /* --- gallery: pinned swatch cards --- */
 .gallery-grid {
   display: grid;
